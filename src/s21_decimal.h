@@ -1,9 +1,6 @@
 #ifndef SRC_S21_DECIMAL_H_
 #define SRC_S21_DECIMAL_H_
 
-#include <stdio.h>
-#include <stdlib.h>
-
 typedef enum {
     s21_NORMAL_VALUE = 0,
     s21_INFINITY = 1,
@@ -11,8 +8,7 @@ typedef enum {
     s21_NAN = 3
 } value_type_t;
 
-typedef struct 
-{
+typedef struct {
     int bits[4];
     value_type_t value_type;
 } s21_decimal;

@@ -1,55 +1,105 @@
 #include <check.h>
+#include <stdlib.h>
 
 #include "s21_decimal.h"
 
 //  Арифметические операторы
+START_TEST(test_s21_add) {
+    // test
+}
+END_TEST
 
-START_TEST(test_s21_add) {}
+START_TEST(test_s21_sub) {
+    // test
+}
 END_TEST
-START_TEST(test_s21_sub) {}
+
+START_TEST(test_s21_mul) {
+    // test
+}
 END_TEST
-START_TEST(test_s21_mul) {}
+
+START_TEST(test_s21_div) {
+    // test
+}
 END_TEST
-START_TEST(test_s21_div) {}
-END_TEST
-START_TEST(test_s21_mod) {}
+
+START_TEST(test_s21_mod) {
+    // test
+}
 END_TEST
 
 //  Операторы сравнения
+START_TEST(test_s21_is_less) {
+    // test
+}
+END_TEST
 
-START_TEST(test_s21_is_less) {}
+START_TEST(test_s21_is_less_or_equal) {
+    // test
+}
 END_TEST
-START_TEST(test_s21_is_less_or_equal) {}
+
+START_TEST(test_s21_is_greater) {
+    // test
+}
 END_TEST
-START_TEST(test_s21_is_greater) {}
+
+START_TEST(test_s21_is_greater_or_equal) {
+    // test
+}
 END_TEST
-START_TEST(test_s21_is_greater_or_equal) {}
+
+START_TEST(test_s21_is_equal) {
+    // test
+}
 END_TEST
-START_TEST(test_s21_is_equal) {}
-END_TEST
-START_TEST(test_s21_is_not_equal) {}
+
+START_TEST(test_s21_is_not_equal) {
+    // test
+}
 END_TEST
 
 //  Преобразователи
+START_TEST(test_s21_from_int_to_decimal) {
+    // test
+}
+END_TEST
 
-START_TEST(test_s21_from_int_to_decimal) {}
+START_TEST(test_s21_from_float_to_decimal) {
+    // test
+}
 END_TEST
-START_TEST(test_s21_from_float_to_decimal) {}
+
+START_TEST(test_s21_from_decimal_to_int) {
+    // test
+}
 END_TEST
-START_TEST(test_s21_from_decimal_to_int) {}
-END_TEST
-START_TEST(test_21_from_decimal_to_float) {}
+
+START_TEST(test_21_from_decimal_to_float) {
+    // test
+}
 END_TEST
 
 //  Другие функции
+START_TEST(test_s21_floor) {
+    // test
+}
+END_TEST
 
-START_TEST(test_s21_floor) {}
+START_TEST(test_s21_round) {
+    // test
+}
 END_TEST
-START_TEST(test_s21_round) {}
+
+START_TEST(test_s21_truncate) {
+    // test
+}
 END_TEST
-START_TEST(test_s21_truncate) {}
-END_TEST
-START_TEST(test_s21_negate) {}
+
+START_TEST(test_s21_negate) {
+    // test
+}
 END_TEST
 
 int main() {
@@ -57,7 +107,6 @@ int main() {
     SRunner *srunner = srunner_create(suite);
 
     //  Арифметические операторы
-
     TCase *s21_addCase = tcase_create("s21_addCase");
     suite_add_tcase(suite, s21_addCase);
     tcase_add_test(s21_addCase, test_s21_add);
@@ -79,7 +128,6 @@ int main() {
     tcase_add_test(s21_modCase, test_s21_mod);
 
     //  Операторы сравнения
-
     TCase *s21_is_lessCase = tcase_create("s21_is_lessCase");
     suite_add_tcase(suite, s21_is_lessCase);
     tcase_add_test(s21_is_lessCase, test_s21_is_less);
@@ -106,7 +154,6 @@ int main() {
     tcase_add_test(s21_is_not_equalCase, test_s21_is_not_equal);
 
     //  Преобразователи
-
     TCase *s21_from_int_to_decimalCase =
         tcase_create("s21_from_int_to_decimalCase");
     suite_add_tcase(suite, s21_from_int_to_decimalCase);
@@ -130,7 +177,6 @@ int main() {
                    test_21_from_decimal_to_float);
 
     //  Другие функции
-
     TCase *s21_floorCase = tcase_create("s21_floorCase");
     suite_add_tcase(suite, s21_floorCase);
     tcase_add_test(s21_floorCase, test_s21_floor);
@@ -146,8 +192,6 @@ int main() {
     TCase *s21_negateCase = tcase_create("s21_negateCase");
     suite_add_tcase(suite, s21_negateCase);
     tcase_add_test(s21_negateCase, test_s21_negate);
-
-    // _____________________________________________________
 
     srunner_run_all(srunner, CK_VERBOSE);
     int number_failed = srunner_ntests_failed(srunner);
