@@ -98,3 +98,40 @@
 //     s21_decimal res;
 //     return res;
 // }
+
+/* дополнительные функции ТУХТАЛЫШ */
+void setBit(s21_decimal *d, int i, int bit_value) {
+  unsigned int mask = 1u << (i % 32);
+  if (bit_value == 1) d->bits[i / 32] |= mask;
+  if (bit_value == 0) d->bits[i / 32] &= ~mask;
+}
+
+int getBit(s21_decimal d, int index) {
+  unsigned int mask = 1u << (index % 32);
+  return d.bits[index / 32] & mask;
+}
+
+int getSign(s21_decimal d) {
+  int bit = 0;
+  unsigned int mask = 1u << 31;
+  if ((d.bits[3] & mask) != 0) bit = 1;
+  return bit;
+}
+
+void setSign(s21_decimal *d, int sign) {
+  unsigned int mask = 1u << 31;
+  if (sign == 1) d->bits[3] |= mask;
+  if (sign == 0) d->bits[3] &= ~mask;
+}
+
+int getScale(s21_decimal d) {
+  setSign(&d, 0);
+  d.bits[3] >>= 16;
+  return d.bits[3];
+}
+void setScale(s21_decimal *d, int scale_value) {
+  int sign = getSign(*d);
+  d->bits[3] = scale_value;
+  d->bits[3] <<= 16;
+  if (sign == 1) setSign(d, 1);
+}
